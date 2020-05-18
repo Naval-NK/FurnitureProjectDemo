@@ -78,7 +78,7 @@ a{
 /* 320 mobile 768 ipad  */
 .iconBar{
     display: none;
-}  
+}
 @media screen and (max-width: 500px) {
     .navBar li:not(:first-child) {display: none;}
     .navBar{
@@ -86,20 +86,19 @@ a{
     }
     .navBar li.iconBar {
       display: block;
-      margin-left: 70%;
+      margin-left: 70vw;
     }
     .navBarIconSpan{
         margin-right: 0px;
     }
-}
-@media screen and (max-width: 500px) {
     .navBar.navBarResp {
         position: relative;
         display: block;
     }
     .navBar.navBarResp .iconBar {
       position: absolute;
-      margin-left: 72%;
+      /* margin-left: 72%; */
+      margin-left: 70vw;
       top: 0;
     }
     .navBar.navBarResp li{
