@@ -222,33 +222,7 @@ li.toC2:hover{
 }
 
 /* ----------   PARALLAX-EFFECT   ------------ */
-.para1 {
-    /* The image used */
-    background-image: url("C:\Users\Nk\Desktop\Angular\ProOne\src\assets\blur1.png");
-    /* background-color: grey; */
-    /* Set a specific height */
-    /* height: 500px; */
-    height: 1000px;
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.para2 {
-    /* The image used */
-    background-image: url("C:\Users\Nk\Desktop\Angular\ProOne\src\assets\blur2.png");
-    /* background-color: black; */
-    /* Set a specific height */
-    /* height: 500px; */
-    height: 1000px;
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+
 .para3 {
     /* The image used */
     background-image: url("C:\Users\Nk\Desktop\Angular\ProOne\src\assets\blur3.png");
