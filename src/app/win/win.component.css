@@ -225,7 +225,7 @@ li.toC2:hover{
 
 .para3 {
     /* The image used */
-    background-image: url("C:\Users\Nk\Desktop\Angular\ProOne\src\assets\blur3.png");
+    background-image: url("../../assets/blur3.png");
     /* background-color: rgb(27, 50, 85); */
     /* Set a specific height */
     /* height: 500px; */
