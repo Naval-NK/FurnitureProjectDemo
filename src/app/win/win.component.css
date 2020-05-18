@@ -98,7 +98,8 @@ a{
     .navBar.navBarResp .iconBar {
       position: absolute;
       /* margin-left: 72%; */
-      margin-left: 70vw;
+      margin-left: 75vw;
+      padding-top: 2px;
       top: 0;
     }
     .navBar.navBarResp li{
@@ -981,13 +982,14 @@ img.childBedDesk:hover {
     }
     #fliptrolly{
         height:400px;
+        width: 160px;
     }
     #trolly2{
-        width: 25%;
+        width: 90%;
         height: 160px;
     }
     #trolly3{
-        width: 25%;
+        width: 90%;
         height: 160px;
         margin-top: 25px;
     }
