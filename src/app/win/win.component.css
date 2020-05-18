@@ -775,7 +775,7 @@ img.childBedDesk:hover {
     .livingtext{
         font-weight: 400;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 1.9rem;
+        font-size: 1.8rem;
         text-align: center;
         text-transform: uppercase;
     }   
@@ -811,7 +811,7 @@ img.childBedDesk:hover {
         align-content: center;
     }
     .kitchentext{
-        font-size: 1.9rem;
+        font-size: 1.8rem;
         margin: 0px;
         margin-bottom: 5px;
     }
