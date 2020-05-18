@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <section #home>
+        <div class="container-fluid " >
+            <div class="fixed-top">
+                <!-- NAVIGATION BAR -->
+                <ul class="navBar row" id="myNavBar">
+                    <li (click)="hideUp();" class="col-xs-1 toC2 navBarIconSpan" (click)="scrollSmooth(home)" >
+                        <a>
+                            <i class="fa fa-home fa-2x"></i>
+                        </a>
+                    </li>
+                    <li class="borderUp toC2"></li>
+                    <li (click)="hideUp();" class="col-xs-2 toC2" (click)="scrollSmooth(living)">
+                        <a>Living</a> 
+                    </li>
+                    <li (click)="hideUp();" class="col-xs-2 toC2 "  (click)="scrollSmooth(kitchen)">
+                        <a>Kitchen</a> 
+                    </li>
+                    <li (click)="hideUp();" class="col-xs-2 toC2"  (click)="scrollSmooth(furniture)">
+                       <a> Furniture</a>
+                    </li>
+                    <!-- <ul class="col-xs-2 toC2  dropdown" (click)="scrollSmooth(furniture)">
+                        <a style="padding-right: 30px;">Furniture</a>
+                            <li class="toC2 " id="dropdownMenuLink" data-toggle="dropdown"></li>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <ul class="dropdown-item dropRight dropdownItems" href="#">
+                                    <li class="toC2" id="droprightMenuLink">LivingRoom</li>
+                                    <ul class="dropright-menu" aria-labelledby="droprightMenuLink">
+                                        <li class="dropdown-item droprightItems" href="#">Sofa</li>
+                                        <li class="dropdown-item droprightItems" href="#">Bed</li>
+                                    </ul>
+                                </ul>
+                                <li class="toC2 dropdown-item dropdownItems" href="#">Bedroom</li>
+                                <li class="toC2 dropdown-item dropdownItems" href="#">Kitchen</li>
+                            </ul>
+                    </ul>   -->
+                    <li (click)="hideUp();" class="col-xs-2 toC2" (click)="scrollSmooth(bedroom)">
+                        <a>Bedroom</a>
+                    </li>
+                    <!-- <li (click)="hideUp();" class="col-xs-2 toC2">
+                        <a>About</a>
+                    </li> -->
+                    <li (click)="hideUp();" class="col-xs-2 toC2" (click)="scrollSmooth(contact)">
+                        <a>Contact</a>
+                    </li> 
+                    <li class="col-xs-1 iconBar toC2">
+                        <a href="javascript:void(0);" (click)="iconBarExpand()">
+                            <i class="fa fa-bars fa-2x"></i>
+                        </a>
+                    </li>                 
+                </ul>
+            </div>
+
+            <!-- LOGO AND SEARCH -->
+            <div id="searchBar" class="row" style="height: 8vh;position: relative;">
+                <span class="col-5 toC2 contactText">
+                    <img class="img-responsive"
+                        id="logoImg"
+                        src="../../assets/tablewoodlogo.png" alt="logo"
+                    >
+                </span>
+                <!-- &#xf002; -->
+                <span class="col-7 toC3">
+                    <form  class="row" action="">
+                        <input (keydown.enter)="submitForm($event)" id="searchId" class="col-10 inputSearch fontAwesome toC3" type="text" placeholder="Search">
+                        <button id="submitSearch" class="ml-1 col-1" type="submit">
+                            <i class="fa fa-search fa-1x searchIcon"></i>
+                        </button>
+                    </form>
+                </span>
+            </div>
+
+            <!-- SLIDE SHOW -->
+            <div class="slideBlock">
+                
+                <!-- IMAGES -->
+                <div class="imgs fade">
+                    <a href="javascript:void(0);" target="_blank">
+                        <img class="slide" src="../assets/slide/slide1.png" alt="">
+                    </a>
+                </div>
+                <div class="imgs fade">
+                    <a href="javascript:void(0);" target="_blank">
+                        <img class="slide "  src="../assets/slide/slide2.png" alt="">
+                    </a>
+                </div>
+                <div class="imgs fade">
+                    <a href="javascript:void(0);" target="_blank">
+                        <img class="slide" src="../assets/slide/slide3.png" alt="">
+                    </a>
+                </div>
+
+                <!-- POINTERs --> 
+                    <!-- <div class="back ">
+                        &#10094;
+                    </div>
+                    <div class="next ">
+                        &#10095;
+                    </div> -->
+            </div>
+
+            <!-- NAVIGATION DOTS -->
+            <div class="mt-4" style="text-align:center">
+                <span class="dot" (click)="holdThis(1)"></span>
+                <span class="dot" (click)="holdThis(2)"></span>
+                <span class="dot" (click)="holdThis(3)"></span>
+            </div>
+
+            <!-- INTO NOTE -->
+            <div class="row mt-2" >
+                <div class="col-3"></div>
+                <p class="col-6 introNote">
+                    <span class="boldNote"> Pune's Trusted Furniture Store Since 2016 </span><br>
+                    We have achieved trust and credibility
+                    <span id="3dots">...</span>
+                    <span id="showMore" style="display: none;">of customers
+                        by fullfilling there requirement and maintaining our quality.
+                        Explore variety of producuts which will beautify yur house and Dont forget to visit our shop ...!
+                    </span>
+                    <span (click)="showText()" id="btnMore" role="button" >Show More</span>
+                </p>
+                <div class="col-3"></div>
+            </div>
+
+            <!-- FEATURES -->
+            <div class="row mb-5 fea">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-2 toC2">
+                    <div class="toC2 roundCircle fadeFeature"><i class="fa fa-3x fa-truck fa-flip-horizontal"></i></div>
+                    <div class="mt-3 feature">FREE SHIPPING</div>
+                </div>
+                <div class="col-xs-2 toC2">
+                    <div class="toC2 roundCircle"><i class="fa fa-3x fa-undo"></i></div>
+                    <div class="mt-3 feature">REPLACEMENT</div>
+                </div>
+                <div class="col-xs-2 toC2">
+                    <div class="toC2 roundCircle"><i class="fa fa-3x fa-wrench"></i></div>
+                    <div class="mt-3 feature">FREE ASSEMBLY</div>
+                </div>
+                <div class="col-xs-2 toC2">
+                    <div class="toC2 roundCircle"><i class="fa fa-3x fa-credit-card"></i></div>
+                    <div class="mt-3 feature">EMI AVAILABLE</div>
+                </div>
+                <div class="col-xs-2 toC2">
+                    <div class="toC2 roundCircle"><i class="fa fa-3x fa-bell"></i></div>
+                    <div class="mt-3 feature fe">ASSISTANCE</div>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LivingRoom PAGE -->
+    <section #living>
+        <div class="container-fluid">
+            <div class="forDesk"></div>
+            <div class="row">
+                <!-- SOFA COLLECTION -->
+                <div class="col-5 " id="sofaRight">
+                    <span class="livingtext toC2">Excellent Sofa Collection</span>
+                    <a href="javascript:void(0)">
+                        <img id="sofa_living" src="../../assets/living/sofa_collection1.png" alt="sofa"
+                        class="img-responsive"
+                        data-toggle="tooltip" data-placement="top" title="Sofa Set Collections" >
+                    </a>
+                    <a href="javascript:void(0)">
+                        <img id="sofa_living2" src="../../assets/living/sofa_collection2.png" alt="sofa"
+                        class="img-responsive"
+                        data-toggle="tooltip" data-placement="top" title="Sofa Set Collections" >
+                    </a>
+                </div>
+
+                <!-- TV UNIT AND STOOLS -->
+                <div class="col-7 alignRightTv">
+                    <!-- TV UNIT -->
+                    <span class="livingtext toC2 ">Variety of TV Unit Set</span>
+                    <div>
+                        <a href="javascript:void(0)">
+                            <img 
+                            class="img-responsive"
+                            data-toggle="tooltip" 
+                            data-placement="top" 
+                            title="T.V. Set Collections" id="tvunit" 
+                            src="../../assets/living/tv_unit2.png" alt="tv">
+                        </a>
+                    </div>
+
+                    <!-- STOOL AND TIPOI -->
+                    <div>
+                        <div class="mt-4">
+                            <span class="livingtext toC2 ">Tipoi and Small Stool Products</span>
+                        </div>
+                        <span class="forTab">
+                            <a href="javascript:void(0)">
+                                <img 
+                                class="img-fluid"
+                                data-toggle="tooltip" 
+                                data-placement="top" 
+                                title="Living Room Stools" 
+                                id="stool" src="../../assets/living/stool1.png" alt="stool">
+                            </a>
+                        </span>
+                        <span class="forTab">
+                            <a href="javascript:void(0)">
+                                <img 
+                                class="img-fluid"
+                                data-toggle="tooltip" 
+                                data-placement="top" 
+                                title="Living Room Tipoi's" 
+                                id="tipoi" src="../../assets/living/tipoi4.png" alt="tipoi">
+                            </a>
+                        </span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kitchen PAGE -->
+    <section #kitchen>
+        <div class="container-fluid">
+            <div class="row forMobile">
+                <!-- BOTH KITCHEN KIT's -->
+                <div class="col-6">
+                    <div>
+                        <div class="toC2 kitchentext">
+                            Excellent Design of Cabinets
+                        </div>
+                        <div>
+                            <div id="flip">
+                                <div class="face">
+                                    <a href="javascript:void(0)">
+                                        <img id="kkit"
+                                        src="../../assets/kitchen/kit1.png" 
+                                        class="img-responsive"
+                                        alt=""
+                                        data-toggle="tooltip" data-placement="top" title="Kitchen Cabinets"
+                                        >
+                                    </a>
+                                </div>
+                                <div class="face bside"> 
+                                    <a href="javascript:void(0)">
+                                        <img id="kkit"
+                                        src="../../assets/kitchen/kit3.png" 
+                                        class="img-responsive"
+                                        alt=""
+                                        data-toggle="tooltip" data-placement="top" title="Kitchen Cabinets"
+                                        >
+                                    </a>
+                                </div>
+                                
+                            </div>
+                            <div class="kitMobile">
+                                <a href="javascript:void(0)">
+                                    <img id="kkitMob"
+                                    src="../../assets/kitchen/cabinet4.png" 
+                                    class="img-responsive"
+                                    alt=""
+                                    data-toggle="tooltip" data-placement="top" title="Kitchen Cabinets"
+                                    >
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <!-- KITCHEN CABINET -->
+                    <div class="mt-5">
+                        <div id="flipcabinet">
+                            <div class="face">
+                                <a href="javascript:void(0)">
+                                    <img id="cabinet"
+                                    src="../../assets/kitchen/cabinet3.png" 
+                                    class="img-responsive"
+                                    alt=""
+                                    data-toggle="tooltip" data-placement="top" title="Kitchen Cabinets"
+                                    >   
+                                </a>
+                            </div>
+                            <div class="face bside"> 
+                                <a href="javascript:void(0)">
+                                    <img id="cabinet"
+                                    src="../../assets/kitchen/cabinet2.png" 
+                                    class="img-responsive"
+                                    alt=""
+                                    data-toggle="tooltip" data-placement="top" title="Kitchen Cabinets"
+                                    >
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>     
+
+                <!-- TROLLY WITH 2 BACK IMAGES -->
+                <div class="col-6">
+                    <div class="toC2 kitchentext">
+                        Kitchen Trollie's
+                    </div>
+
+                    <!-- TROLLY Img's -->
+                    <div id="fliptrolly">
+                        <div class="face">
+                            <img
+                            id="trolly"
+                            class="img-responsive "
+                            src="../../assets/kitchen/trolly1.png" 
+                            alt=""
+                            data-toggle="tooltip" data-placement="top" title="Kitchen Trolly"
+                            >
+                        </div>                            
+                        <div class="face bside">
+                            <div class="toC4Mob">
+                                <img
+                                class="img-responsive"
+                                id="trolly3"
+                                src="../../assets/kitchen/trolly3.png" 
+                                alt=""
+                                data-toggle="tooltip" data-placement="top" title="Kitchen Trolly"
+                                >
+                            </div>
+                            <div class="toC4Mob mt-5">
+                                <img
+                                id="trolly2"
+                                class="img-responsive"
+                                src="../../assets/kitchen/trolly2.png" 
+                                alt=""
+                                data-toggle="tooltip" data-placement="top" title="Kitchen Trolly"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div> 
+                    <a href="javascript:void(0)">
+                        <img id="cabinetMob"
+                        src="../../assets/kitchen/cabinet2.png" 
+                        class="img-responsive"
+                        alt=""
+                        data-toggle="tooltip" data-placement="top" title="Kitchen Cabinets"
+                        >
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Furniture PAGE -->
+    <section #furniture>
+        <div class="container-fluid toC2" >
+            <div class="furnText">
+                Some Of Furniture Products
+            </div>
+            <div class="">
+                <a href="javascript:void(0);"><img src="../../assets/furniture/chair.png" alt="" class="img-fluid furnDiv "></a>
+                <a href="javascript:void(0);"><img src="../../assets/furniture/chair2.png" alt="" class="img-fluid furnDiv "></a>
+                <a href="javascript:void(0);"><img src="../../assets/furniture/cupboard1.png" alt="" class="img-fluid furnDiv  mt-5"></a>
+                <a href="javascript:void(0);"><img src="../../assets/furniture/cupboard2.png" alt="" class="img-fluid furnDiv  mt-5"></a>
+                <a href="javascript:void(0);"><img src="../../assets/furniture/kidstable.png" alt="" class="img-fluid furnDiv  mt-5"></a>
+                <a href="javascript:void(0);"><img src="../../assets/furniture/pctable.png" alt="" class="img-fluid furnDiv  mt-5"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bedroom PAGE -->
+    <section #bedroom>
+        <div class="container-fluid" >
+            <div class="bedText">
+                Spectacular Designs for Bed
+            </div>
+            <div class="">
+                <a href="javascript:void(0);"><img src="../../assets/bedroom/bed1.png" alt="" class="img-fluid bedDiv"></a>
+                <a href="javascript:void(0);"><img src="../../assets/bedroom/bed3.png" alt="" class="img-fluid bedDiv"></a>
+                <a href="javascript:void(0);"><img src="../../assets/bedroom/bed2.png" alt="" class="img-fluid bedDiv"></a>
+            </div>
+            <div class="bedText noForDesk">
+                Varierty Of Dressing Tables
+            </div>
+            <div class="bedTextDesk">
+                Dressing Tables and Kids Bed
+            </div>
+            <div>
+                <a href="javascript:void(0);"><img src="../../assets/bedroom/dtable1.png" alt="" class="img-fluid dtDiv"></a>
+                <a href="javascript:void(0);"><img src="../../assets/bedroom/dtable2.png" alt="" class="img-fluid dtDivWood"></a>
+                <a href="javascript:void(0);"><img src="../../assets/bedroom/kidbed.png" alt="" class="img-fluid childBedDesk"></a>
+            </div>
+            <div class="childBedText noForDesk">
+                Childrens Beds
+            </div>
+            <div class="noForDesk">
+                <a href="javascript:void(0);"><img src="../../assets/bedroom/kidbed.png" alt="" class="img-fluid childBed"></a>
+            </div> 
+        </div>
+    </section>
+    
+
+    <!-- CONTACT ME -->
+    <section #contact class="deskView">
+        <div class="container-fluid para3">
+            <div class="row">    
+                <div class="col-sm-6 text-white ">
+                    <div class="contText" >
+                        <p class="contactText">CONTACT US</p>
+                        <p class="contactLabel">We are always here to help you out whatever way we can !</p>
+                    </div>  
+
+                    <form #contactForm id="contactForm">
+                        <div class="form-group toC2 mt-3">
+                            <input class="form-control mt-3 fontAwesome w3-medium" id="formname" placeholder="&#xf007;  Name">
+                            <input class="form-control mt-3 fontAwesome w3-medium" id="formemail" placeholder="&#xf0e0;  Email" type="email">
+                        </div>
+                        <div class="form-group toC2">
+                            <label for="formmessage" class="contactLabel">Type Message Here</label>
+                            <textarea 
+                                class="form-control" id="formmessage" 
+                                rows="2">
+                            </textarea>
+                        </div>
+                        <button class="toC4 btn btn-primary" type="submit">Submit form</button>
+                    </form>
+
+                    <p class="contactNum" >CALL US   +91-9123456789</p>
+                    <p class="contactEmail" >get_information@email.com</p>
+                    <p class="contIcon">
+                        <a href="javascript:void(0);" target="_blank">
+                            <i class="fa fa-facebook-square w3-xxlarge"></i>
+                        </a>
+                        <a href="javascript:void(0);" target="_blank">
+                            <i class="fa fa-whatsapp w3-xxlarge"></i>
+                        </a>
+                        <a role="button" (click)="showApi() ; scrollSmooth(map)">
+                            <i class="fa fa-location-arrow w3-xxlarge"></i>
+                        </a>
+                    </p>
+                </div>     
+
+                
+                <iframe
+                    #map
+                    class="col-sm-6 hideIt" 
+                    id="mapApi"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242118.14199614953!2d73.72288117003453!3d18.524564859944654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d9ee343!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1587382357877!5m2!1sen!2sin" 
+                    frameborder="0" style="border:0;" 
+                    allowfullscreen="" aria-hidden="false" 
+                    tabindex="0">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
+
+
+<!-- 
+    ***********************************DROPDOWN*******************************
+    __________________________________________________________________________
+
+<div class="toC2 col-2 dropdown" style="padding-top: ;height: 5vh;">
+                        
+    <div style="display: inline-block;position: relative;" 
+         id="dropdownMenuLink"
+         data-toggle="dropdown">
+    Products
+    </div>
+
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      
+        <div class="dropdown-item dropdownItems dropright" href="#">
+                <div class="dropright" 
+                    style="display: inline-block;position: relative;" 
+                    id="dropdownMenuLink1"
+                    data-toggle="dropdown">
+                Living
+                </div>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+                    <div class="dropdown-item dropdownItems" href="#">Sofa</div>
+                    <div class="dropdown-item dropdownItems" href="#">POP</div>
+                </div>
+        </div>
+
+       <div class="dropdown-item dropdownItems" href="#">Bedroom</div>
+       <div class="dropdown-item dropdownItems" href="#">Kitchen</div>
+    </div>
+</div> -->
+
+    <!-- ABOUT
+    <section #about>
+        <div class="container-fluid bg-success para toC2"  >
+            <div class=" text-white" style= "font-size: 4rem;color: black;">ABOUT....!</div>
+        </div>
+    </section> -->
+
+<!-- LOGO -->
+<!-- <div class="col-2 text-white">
+    <div class="row toC1" >
+        <img
+        class="rounded mt-1"
+        height="45"
+        width="90"
+        src="../assets/logo3.png">
+    </div>
+</div> -->
