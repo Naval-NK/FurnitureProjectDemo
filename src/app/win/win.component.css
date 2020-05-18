@@ -503,7 +503,7 @@ img:hover  {
     text-transform: uppercase;
 }
 .kitchentext:hover{
-    color: rgb(92, 0, 0);
+    color: rgb(251, 204, 72);
     user-select: none;
     transform:scale(1.02);
     transition: ease-in .5s;
@@ -775,7 +775,7 @@ img.childBedDesk:hover {
     .livingtext{
         font-weight: 400;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 1.8rem;
+        font-size: 1.9rem;
         text-align: center;
         text-transform: uppercase;
     }   
@@ -811,7 +811,7 @@ img.childBedDesk:hover {
         align-content: center;
     }
     .kitchentext{
-        font-size: 1.8rem;
+        font-size: 1.9rem;
         margin: 0px;
         margin-bottom: 5px;
     }
@@ -948,7 +948,7 @@ img.childBedDesk:hover {
         transition: transform .8s;
     } 
     .kitchentext{
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         /* margin-top: 15%; */
     }
     .forMobile{
@@ -1008,7 +1008,7 @@ img.childBedDesk:hover {
         margin: 0px;
     }
     .furnText{    
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         margin-top: 35px;
         margin-bottom: 10px;
     }
