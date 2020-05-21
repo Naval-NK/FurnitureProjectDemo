@@ -24,8 +24,17 @@ export class WinComponent implements OnInit {
   ngOnInit(): void {
     this.displaySlides();
 
-    $('#submitForm').on('click',function(){
-      $('#contactForm').submit();
+    // $('#submitForm').on('click',function(){
+    //   $('#contactForm').submit();
+    // });
+
+    $("#submitForm").submit(function(e) {
+      e.preventDefault();
+    
+      var $form = $(this);
+      $.post($form.attr("action"), $form.serialize()).then(function() {
+        alert("Thank you!");
+      });
     });
 
   }
