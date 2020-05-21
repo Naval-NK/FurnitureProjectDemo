@@ -28,14 +28,40 @@ export class WinComponent implements OnInit {
     //   $('#contactForm').submit();
     // });
 
-    $("#submitForm").submit(function(e) {
-      e.preventDefault();
+    // $("#contactForm").submit(function(e) {
+    //   e.preventDefault();
     
-      var $form = $(this);
-      $.post($form.attr("action"), $form.serialize()).then(function() {
-        alert("Thank you!");
+    //   var $form = $(this);
+    //   $.post($form.attr("action"), $form.serialize()).then(function() {
+    //     $('#contactForm').submit();
+    //     alert("Thank you!");
+    //   });
+    // });
+
+    $(function() {
+      //hang on event of form with id=myform
+      $("#contactForm").submit(function(e) {
+  
+          //prevent Default functionality
+          e.preventDefault();
+  
+          //get the action-url of the form
+          var actionurl = "http://localhost:4200/";
+  
+          //do your own request an handle the results
+          $.ajax({
+                  url: actionurl,
+                  type: 'post',
+                  dataType: 'application/json',
+                  data: $("#myform").serialize(),
+                  success: function(data) {
+                      alert("FORM HAS BEEN SUBMITTED");
+                  }
+          });
+  
       });
-    });
+  
+  });
 
   }
 
