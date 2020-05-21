@@ -1,3 +1,5 @@
+import { SubmitFormService } from '../submit-form.service';
+import { Client } from '../Client';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,17 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WinComponent implements OnInit {
   public _stop;
-  constructor() {}
+  constructor(private _clientDataService:SubmitFormService) {}
   
-  ngOnInit(): void {
-    this.displaySlides();
-  }
-
   public imgs;
   public dots;
   public static imgNum :number = 0;
   public ele ;
 
+  public moreId;
+  public dotId;
+  public moreBtn;
+
+  ngOnInit(): void {
+    this.displaySlides();
+  }
+
+  // SLIDE MECHANISM
   displaySlides(){
     this.imgs = document.querySelectorAll(".imgs");
     this.dots = document.querySelectorAll(".dot");
@@ -38,6 +45,7 @@ export class WinComponent implements OnInit {
     )
   }
 
+  // SLIDE SHOW HOLD FOR SOME TIME WHEN DOT CLICKED
   holdThis(num){
     this.imgs = document.querySelectorAll(".imgs");
     for( let i= 0 ; i<this.imgs.length ; i++ ){
@@ -54,13 +62,12 @@ export class WinComponent implements OnInit {
     )
   }
 
+  // SCROLLING EFFECT
   scrollSmooth($element){
     $element.scrollIntoView({behavior: "smooth", block: "center", inline: "start"});
   }
 
-  public moreId;
-  public dotId;
-  public moreBtn;
+  // SPECIALITY TEXT
   showText(){
     this.moreBtn = document.getElementById("btnMore");
     this.dotId = document.getElementById("3dots");
@@ -80,13 +87,7 @@ export class WinComponent implements OnInit {
     }
   }
 
-  submitForm(event){
-    
-    if(event.keycode == 13){
-      prompt("You have pressed Enter for Search");
-    }
-  }
-
+  // AFTER CLICK OPEN NAVBAR IN MOBILE
   iconBarExpand() {
     var x = document.getElementById("myNavBar");
     
@@ -96,6 +97,8 @@ export class WinComponent implements OnInit {
       x.className = "navBar row";
     }
   }
+
+  // AFTER CLICK HIDE NAVBAR IN MOBILE
   hideUp(){
     var x = document.getElementById("myNavBar");
     if (x.className === "navBar row navBarResp") {
@@ -103,6 +106,7 @@ export class WinComponent implements OnInit {
     }
   }
   
+  // SHOW MAP WHEN ICON GETS CLICKED
   showApi(){
     var x = document.getElementById("mapApi");
     if(x.className === "col-sm-6 hideIt"){
@@ -112,5 +116,27 @@ export class WinComponent implements OnInit {
     }
 
   }
+
+  public clientName:string;
+  public clientEmail:string;
+  public clientMessage:string;
+  public client:Client
+  // client = new Client("ABC","ABC@123","HI THERE");
+  
+  submitForm(){
+    this.client  = new Client(this.clientName,this.clientEmail,this.clientMessage);
+    this.subscribeData();
+  }
+
+  subscribeData(){
+    // this._clientDataService.sendEmail(this.client).
+    // subscribe(
+    //   data => console.log("GOT DATA",data),
+    // )
+    // (ngSubmit)="submitForm()"
+  }
+
+
+
 
 }
