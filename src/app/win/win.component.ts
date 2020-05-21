@@ -25,7 +25,7 @@ export class WinComponent implements OnInit {
   ngOnInit(): void {
     this.displaySlides();    
 
-    this.testForm = document.querySelector("#contactForm");
+    this.testForm = document.querySelector("#contact form");
       
     this.testForm.addEventListener('submit', e => {
         e.preventDefault();
