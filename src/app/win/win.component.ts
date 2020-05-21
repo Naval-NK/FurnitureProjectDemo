@@ -32,7 +32,7 @@ export class WinComponent implements OnInit {
       e.preventDefault();
     
       var $form = $(this);
-      $.post($form.attr("action","https://tablewoodfs.netlify.app/"), $form.serialize()).then(function() {
+      $.post($form.attr("action"), $form.serialize()).then(function() {
         alert("Thank you!");
       });
     });
