@@ -420,68 +420,71 @@
                     </div>  
 
                     <!-- CONTACT FORM -->
-                    <form   action="POST" 
+                    <form   action="post" 
                             data-netlify="true" 
-                            novalidate #contactForm="ngForm" 
+                            #contactForm="ngForm" 
                             id="contactForm" 
                             >
 
-                        <div class="form-group toC2 mt-3">
-                        <!-- NAME INPUT BOX -->
-                            <input 
-                                #nameInput="ngModel" required
-                                [(ngModel)]="clientName" 
-                                name="clientName" 
-                                class="form-control mt-3 fontAwesome fa-2x" 
-                                id="formname" placeholder=" &#xf007;  Name">
+                        <div class="fields">
+                            <div class="field form-group toC2 mt-3">
+                            <!-- NAME INPUT BOX -->
+                                <input 
+                                    #nameInput="ngModel" required
+                                    [(ngModel)]="clientName" 
+                                    name="clientName" 
+                                    class="form-control mt-3 fontAwesome fa-2x" 
+                                    id="formname" placeholder=" &#xf007;  Name">
 
-                            <div class="help is-error" *ngIf="nameInput.invalid && nameInput.touched">
-                                <span class="toC2">Your Name Is Required</span>
-                            </div>
-                        <!-- EMAIL INPUT BOX -->
-                            <input 
-                                [(ngModel)]="clientEmail" 
-                                name="clientEmail" 
-                                class="form-control mt-3 fontAwesome fa-2x" 
-                                id="formemail" placeholder="&#xf0e0;  Email" 
-                                type="email"
-                                required email
-                                #emailInput="ngModel">
+                                <div class="help is-error" *ngIf="nameInput.invalid && nameInput.touched">
+                                    <span class="toC2">Your Name Is Required</span>
+                                </div>
+                            <!-- EMAIL INPUT BOX -->
+                                <input 
+                                    [(ngModel)]="clientEmail" 
+                                    name="clientEmail" 
+                                    class="form-control mt-3 fontAwesome fa-2x" 
+                                    id="formemail" placeholder="&#xf0e0;  Email" 
+                                    type="email"
+                                    required email
+                                    #emailInput="ngModel">
 
-                            <div class="help is-error" *ngIf="emailInput.invalid && emailInput.touched">
-                                <span class="toC2">Your valid email is required</span>
+                                <div class="help is-error" *ngIf="emailInput.invalid && emailInput.touched">
+                                    <span class="toC2">Your valid email is required</span>
+                                </div>
                             </div>
+                        
+                            <!-- MESSAGE INPUT BOX -->
+                            <div class="field form-group toC2">
+                                <label for="formmessage" class="contactLabel">Type Message Here</label>
+                                <textarea 
+                                    #textInput="ngModel"
+                                    class="form-control" id="formmessage" 
+                                    rows="2"
+                                    name="clientMessage"
+                                    [(ngModel)]="clientMessage"
+                                    required
+                                >
+                                </textarea>
+                                <div class="help is-error" *ngIf="textInput.invalid && textInput.touched">
+                                    <span class="toC2">Please write us</span>
+                                </div>
+                            </div>
+
+                            <!-- CAPTCHA BOX
+                            <div class="field mb-2">
+                                <div data-netlify-recaptcha="true"></div>
+                            </div> -->
                         </div>
-
-                        <!-- MESSAGE INPUT BOX -->
-                        <div class="form-group toC2">
-                            <label for="formmessage" class="contactLabel">Type Message Here</label>
-                            <textarea 
-                                #textInput="ngModel"
-                                class="form-control" id="formmessage" 
-                                rows="2"
-                                name="clientMessage"
-                                [(ngModel)]="clientMessage"
-                                required
-                            >
-                            </textarea>
-                            <div class="help is-error" *ngIf="textInput.invalid && textInput.touched">
-                                <span class="toC2">Please write us</span>
-                            </div>
-                        </div>
-
-                        <!-- CAPTCHA BOX
-                        <div class="field mb-2">
-                            <div data-netlify-recaptcha="true"></div>
-                        </div> -->
 
                         <!-- SUBMIT BUTTON -->
                         <button 
                             class="toC4 btn btn-primary actions" 
                             type="submit"
                             [disabled]="contactForm.invalid">
-                                Submit form
+                                Send!
                         </button>
+                    
                     </form>
 
                     <p class="contactNum">CALL US  +91-9123456789</p>
