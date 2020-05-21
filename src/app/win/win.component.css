@@ -352,9 +352,12 @@ input[type=text], select{
 #formname{
     width: 250px;
     border-radius: 20px;
+    font-family: FontAwesome;;
 }
+
 #formemail{
     width: 250px;
+    font-family: FontAwesome;;
     border-radius: 20px;
 }  
 /* WHEN MOBILE SHOW MAP */
