@@ -46,11 +46,11 @@ export class WinComponent implements OnInit {
           e.preventDefault();
   
           //get the action-url of the form
-          // var actionurl = "http://localhost:4200/";
+          var actionurl = "https://tablewoodfs.netlify.app/";
   
           //do your own request an handle the results
           $.ajax({
-                  // url: actionurl,
+                  url: actionurl,
                   type: 'post',
                   dataType: 'application/json',
                   data: $("#contactForm").serialize(),
