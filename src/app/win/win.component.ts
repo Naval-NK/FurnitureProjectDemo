@@ -20,50 +20,39 @@ export class WinComponent implements OnInit {
   public moreId;
   public dotId;
   public moreBtn;
-
+  public testForm;
+  public formData
   ngOnInit(): void {
-    this.displaySlides();
+    this.displaySlides();    
 
-    // $('#submitForm').on('click',function(){
-    //   $('#contactForm').submit();
-    // });
+    this.testForm = document.querySelector("#contactForm");
+      
+    this.testForm.addEventListener('submit', e => {
+        e.preventDefault();
 
-    $("#contactForm").submit(function(e) {
-      e.preventDefault();
-    
-      var $form = $(this);
-      $.post($form.attr("action"), $form.serialize()).then(function() {
-        alert("Thank you!");
+        this.formData = new FormData(this.testForm);
+        fetch(this.testForm.getAttribute('action'), {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+          },
+          body: new URLSearchParams(this.formData).toString()
+        })
+        .then(res => {
+          if (res) {
+            // M.toast({
+            //   html: 'Thank you for your submission!',
+            //   classes: 'pulse'
+            // });
+            alert("ASDASD");
+          }
+        });
       });
-    });
-
-  //   $(function() {
-  //     //hang on event of form with id=myform
-  //     $("#contactForm").submit(function(e) {
-  
-  //         //prevent Default functionality
-  //         e.preventDefault();
-  
-  //         //get the action-url of the form
-  //         var actionurl = "";
-  
-  //         //do your own request an handle the results
-  //         $.ajax({
-  //                 url: actionurl,
-  //                 type: 'post',
-  //                 dataType: 'application/json',
-  //                 data: $("#contactForm").serialize(),
-  //                 success: function(data) {
-  //                     alert("FORM HAS BEEN SUBMITTED");
-  //                 }
-  //         });
-  
-  //     });
-  
-  // });
-
   }
 
+
+  
   // SLIDE MECHANISM
   displaySlides(){
     this.imgs = document.querySelectorAll(".imgs");
@@ -182,3 +171,47 @@ export class WinComponent implements OnInit {
 
 
 }
+
+
+
+
+// JQUERY FOR FORMS
+/*
+    $('#submitForm').on('click',function(){
+      $('#contactForm').submit();
+    });
+
+    $("#contactForm").submit(function(e) {
+      e.preventDefault();
+    
+      var $form = $(this);
+      $.post($form.attr("action"), $form.serialize()).then(function() {
+        alert("Thank you!");
+      });
+    });
+
+    $(function() {
+      //hang on event of form with id=myform
+      $("#contactForm").submit(function(e) {
+  
+          //prevent Default functionality
+          e.preventDefault();
+  
+          //get the action-url of the form
+          var actionurl = "";
+  
+          //do your own request an handle the results
+          $.ajax({
+                  url: actionurl,
+                  type: 'post',
+                  dataType: 'application/json',
+                  data: $("#contactForm").serialize(),
+                  success: function(data) {
+                      alert("FORM HAS BEEN SUBMITTED");
+                  }
+          });
+  
+      });
+  
+  });
+*/
