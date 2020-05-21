@@ -46,14 +46,14 @@ export class WinComponent implements OnInit {
           e.preventDefault();
   
           //get the action-url of the form
-          var actionurl = "http://localhost:4200/";
+          // var actionurl = "http://localhost:4200/";
   
           //do your own request an handle the results
           $.ajax({
-                  url: actionurl,
+                  // url: actionurl,
                   type: 'post',
                   dataType: 'application/json',
-                  data: $("#myform").serialize(),
+                  data: $("#contactForm").serialize(),
                   success: function(data) {
                       alert("FORM HAS BEEN SUBMITTED");
                   }
