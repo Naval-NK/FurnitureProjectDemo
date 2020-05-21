@@ -420,7 +420,8 @@
                     </div>  
 
                     <!-- CONTACT FORM -->
-                    <form   action="POST" 
+                    <form   
+                            method="POST" 
                             netlify
                             data-netlify="true" 
                             #contactForm="ngForm" 
@@ -480,6 +481,7 @@
 
                         <!-- SUBMIT BUTTON -->
                         <button 
+                            id="submitForm"
                             class="toC4 btn btn-primary" 
                             type="submit"
                             [disabled]="contactForm.invalid">

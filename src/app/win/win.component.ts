@@ -1,6 +1,7 @@
 import { SubmitFormService } from '../submit-form.service';
 import { Client } from '../Client';
 import { Component, OnInit } from '@angular/core';
+declare var $:any;
 
 @Component({
   selector: 'app-win',
@@ -22,6 +23,11 @@ export class WinComponent implements OnInit {
 
   ngOnInit(): void {
     this.displaySlides();
+
+    $('#submitForm').on('click',function(){
+      $('#contactForm').submit();
+    });
+
   }
 
   // SLIDE MECHANISM
@@ -135,6 +141,8 @@ export class WinComponent implements OnInit {
     // )
     // (ngSubmit)="submitForm()"
   }
+
+
 
 
 
