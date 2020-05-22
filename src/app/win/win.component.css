@@ -36,14 +36,18 @@ a{
 
 /* NAVIGATION BAR AND DROPDOWNS */
 #searchBar{
-    margin-top: 5%;
+    margin-top: 4%;
+    height: 12vh;
+    position: relative;
 }
 #logoImg{
-    height: 85%;
-    width: 100%;
+    height: 6vw;
+    width: 30%;
 }
 #logoImg:hover{
     box-shadow: 4px 4px 18px white;
+    transition: ease-in-out .3s;
+    transform: scale(1.08);
 }
 .contactText{
     font-family: monospace;
@@ -192,7 +196,7 @@ li.toC2:hover{
 /* ----------   SLIDE-SHOW-CONTAINER    ------------ */
 .slide{
     width: 100%;
-    height: 40vw;
+    height: 35vw;
     margin-top: 20px;
 }
 .imgs{
@@ -744,6 +748,7 @@ img.childBedDesk:hover {
 /*------------------------Mobile RESPONSIVE------------------------*/
 @media screen and (max-width: 500px) {
     .navBar li:not(:first-child) {display: none;}
+    .logoMiddle 
     .navBar{
         font-weight: 550;
     }
@@ -831,7 +836,7 @@ img.childBedDesk:hover {
         text-transform: uppercase;
     }    
     #searchBar{
-        margin-top: 15%;
+        margin-top: 12%;
         position: inherit;
     }
     .inputSearch{
@@ -1015,7 +1020,7 @@ img.childBedDesk:hover {
         text-transform: uppercase;
     }
     .fea{
-        margin-top: 20%;
+        margin-top: 16%;
     }
     .para3{
         margin-top: 5%;
@@ -1024,6 +1029,13 @@ img.childBedDesk:hover {
         width: 100%;
         height: 35vw;
         margin-top: 20px;
+    }
+    #logoImg{
+        height: 8vw;
+        width: 48%;
+    }
+    #logoImg:hover{
+        box-shadow: 4px 4px 18px white;
     }
 }
 

@@ -30,21 +30,7 @@
                     <li (click)="hideUp();" class="col-xs-2 toC2"  (click)="scrollSmooth(furniture)">
                        <a> Furniture</a>
                     </li>
-                    <!-- <ul class="col-xs-2 toC2  dropdown" (click)="scrollSmooth(furniture)">
-                        <a style="padding-right: 30px;">Furniture</a>
-                            <li class="toC2 " id="dropdownMenuLink" data-toggle="dropdown"></li>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <ul class="dropdown-item dropRight dropdownItems" href="#">
-                                    <li class="toC2" id="droprightMenuLink">LivingRoom</li>
-                                    <ul class="dropright-menu" aria-labelledby="droprightMenuLink">
-                                        <li class="dropdown-item droprightItems" href="#">Sofa</li>
-                                        <li class="dropdown-item droprightItems" href="#">Bed</li>
-                                    </ul>
-                                </ul>
-                                <li class="toC2 dropdown-item dropdownItems" href="#">Bedroom</li>
-                                <li class="toC2 dropdown-item dropdownItems" href="#">Kitchen</li>
-                            </ul>
-                    </ul>   -->
+                    <!-- DROP DOWN MENU WAS HERE -->
                     <li (click)="hideUp();" class="col-xs-2 toC2" (click)="scrollSmooth(bedroom)">
                         <a>Bedroom</a>
                     </li>
@@ -63,14 +49,13 @@
             </div>
 
             <!-- LOGO AND SEARCH -->
-            <div id="searchBar" class="row" style="height: 8vh;position: relative;">
-                <span class="col-5 toC2 contactText">
+            <div id="searchBar" class="toC4" >
                     <img class="img-responsive"
                         id="logoImg"
                         src="../../assets/tablewoodlogo.png" alt="logo"
                     >
-                </span>
-                <!-- &#xf002; -->
+                <!-- SEARCH BOX -->
+                <!-- &#xf002;
                 <span class="col-7 toC3">
                     <form  class="row" action="">
                         <input id="searchId" class="col-10 inputSearch fontAwesome toC3" type="text" placeholder="Search">
@@ -78,7 +63,7 @@
                             <i class="fa fa-search fa-1x searchIcon"></i>
                         </button>
                     </form>
-                </span>
+                </span> -->
             </div>
 
             <!-- SLIDE SHOW -->
@@ -126,7 +111,7 @@
                     <span id="3dots">...</span>
                     <span id="showMore" style="display: none;">of customers
                         by fullfilling there requirement and maintaining our quality.
-                        Explore variety of producuts which will beautify yur house and Dont forget to visit our shop ...!
+                        Explore variety of products which will beautify your house and Dont forget to visit our shop ...!
                     </span>
                     <span (click)="showText()" id="btnMore" role="button" >Show More</span>
                 </p>
@@ -410,7 +395,7 @@
     
 
     <!-- CONTACT ME -->
-    <section id="contact" #contact class="deskView">
+    <section #contact class="deskView">
         <div class="container-fluid para3">
             <div class="row">    
                 <div class="col-sm-6 text-white ">
@@ -418,44 +403,40 @@
                         <p class="contactText">CONTACT US</p>
                         <p class="contactLabel">We are always here to help you out whatever way we can !</p>
                     </div>  
-
+                    
                     <!-- CONTACT FORM -->
-                    <form   
-                            (ngSubmit)="submitForm()"
-                            name="contact" netlify
-                            action="/#contact"
-                            #contactForm="ngForm"
-                            method="POST" 
-                            data-netlify="true" 
-                            id="contactForm"  
-                            name="clientContactForm"
-                            novalidate
-                            >
-
-                        <!-- NAME AND EMAIL ID -->
+                    <form  
+                        action="mailto:naval_kulkarni@yahoo.com" 
+                        method="POST" 
+                        enctype="text/plain"
+                        #contactForm="ngForm" 
+                        id="contactForm" netlify 
+                        name="clientContactForm"
+                        novalidate
+                        >
+                        <!-- NAME AND EMAIL INPUT -->
                         <div class="form-group toC2 mt-3">
-                        <!-- NAME INPUT BOX -->
-                            <!-- type text is preventing icon to display -->
                             <input 
-                                #nameInput
-                                type="text"
-                                name="formname" 
+                                required
+                                #nameInput="ngModel" 
+                                [(ngModel)]="clientName" 
+                                name="clientName" 
                                 class="form-control mt-3 fontAwesome fa-2x" 
-                                id="formname" placeholder="&#xf007; Name"
-                                required>
+                                id="formname" placeholder=" &#xf007;  Name">
 
                             <div class="help is-error" *ngIf="nameInput.invalid && nameInput.touched">
                                 <span class="toC2">Your Name Is Required</span>
                             </div>
                         <!-- EMAIL INPUT BOX -->
                             <input 
-                                #emailInput
-                                type="email"
-                                name="formemail" 
+                                [(ngModel)]="clientEmail" 
+                                name="clientEmail" 
                                 class="form-control mt-3 fontAwesome fa-2x" 
-                                id="formemail" placeholder="&#xf0e0; Email" 
+                                id="formemail" placeholder="&#xf0e0;  Email" 
+                                type="email"
                                 required email
-                            >
+                                #emailInput="ngModel">
+
                             <div class="help is-error" *ngIf="emailInput.invalid && emailInput.touched">
                                 <span class="toC2">Your valid email is required</span>
                             </div>
@@ -465,26 +446,21 @@
                         <div class="form-group toC2">
                             <label for="formmessage" class="contactLabel">Type Message Here</label>
                             <textarea 
-                                #textInput
+                                #textInput="ngModel"
                                 class="form-control" id="formmessage" 
                                 rows="2"
-                                name="formmessage"
+                                name="clientMessage"
+                                [(ngModel)]="clientMessage"
                                 required
-                                placeholder="Type Message Here.."
-                            ></textarea>
+                            >
+                            </textarea>
                             <div class="help is-error" *ngIf="textInput.invalid && textInput.touched">
                                 <span class="toC2">Please write us</span>
                             </div>
                         </div>
 
-                        <!-- CAPTCHA BOX
-                        <div class="field mb-2">
-                            <div data-netlify-recaptcha="true"></div>
-                        </div> -->
-
                         <!-- SUBMIT BUTTON -->
                         <button 
-                            id="submitForm"
                             class="toC4 btn btn-primary" 
                             type="submit"
                             [disabled]="contactForm.invalid">
@@ -576,71 +552,23 @@
 </div> -->
 
 
-<!-- OLD FORM FOR EXPRESS JS -->
-     <!-- CONTACT FORM -->
-     <!-- <form   action="POST" 
-     data-netlify="true" 
-     #contactForm="ngForm" 
-     id="contactForm" netlify 
-     name="clientContactForm"
-     novalidate
-     > -->
 
- <!-- <div class="form-group toC2 mt-3"> -->
- <!-- NAME INPUT BOX -->
-     <!-- <input 
-         required
-         #nameInput="ngModel" 
-         [(ngModel)]="clientName" 
-         name="clientName" 
-         class="form-control mt-3 fontAwesome fa-2x" 
-         id="formname" placeholder=" &#xf007;  Name">
 
-     <div class="help is-error" *ngIf="nameInput.invalid && nameInput.touched">
-         <span class="toC2">Your Name Is Required</span>
-     </div> -->
- <!-- EMAIL INPUT BOX -->
-     <!-- <input 
-         [(ngModel)]="clientEmail" 
-         name="clientEmail" 
-         class="form-control mt-3 fontAwesome fa-2x" 
-         id="formemail" placeholder="&#xf0e0;  Email" 
-         type="email"
-         required email
-         #emailInput="ngModel">
+ 
 
-     <div class="help is-error" *ngIf="emailInput.invalid && emailInput.touched">
-         <span class="toC2">Your valid email is required</span>
-     </div>
- </div> -->
-
- <!-- MESSAGE INPUT BOX -->
- <!-- <div class="form-group toC2">
-     <label for="formmessage" class="contactLabel">Type Message Here</label>
-     <textarea 
-         #textInput="ngModel"
-         class="form-control" id="formmessage" 
-         rows="2"
-         name="clientMessage"
-         [(ngModel)]="clientMessage"
-         required
-     >
-     </textarea>
-     <div class="help is-error" *ngIf="textInput.invalid && textInput.touched">
-         <span class="toC2">Please write us</span>
-     </div>
- </div> -->
-
- <!-- CAPTCHA BOX
- <div class="field mb-2">
-     <div data-netlify-recaptcha="true"></div>
- </div> -->
-
- <!-- SUBMIT BUTTON -->
- <!-- <button 
-     class="toC4 btn btn-primary" 
-     type="submit"
-     [disabled]="contactForm.invalid">
-         Send!
- </button>
-</form> -->
+<!-- DROPDOWN MENU -->
+<!-- <ul class="col-xs-2 toC2  dropdown" (click)="scrollSmooth(furniture)">
+                        <a style="padding-right: 30px;">Furniture</a>
+                            <li class="toC2 " id="dropdownMenuLink" data-toggle="dropdown"></li>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <ul class="dropdown-item dropRight dropdownItems" href="#">
+                                    <li class="toC2" id="droprightMenuLink">LivingRoom</li>
+                                    <ul class="dropright-menu" aria-labelledby="droprightMenuLink">
+                                        <li class="dropdown-item droprightItems" href="#">Sofa</li>
+                                        <li class="dropdown-item droprightItems" href="#">Bed</li>
+                                    </ul>
+                                </ul>
+                                <li class="toC2 dropdown-item dropdownItems" href="#">Bedroom</li>
+                                <li class="toC2 dropdown-item dropdownItems" href="#">Kitchen</li>
+                            </ul>
+                    </ul>   -->
