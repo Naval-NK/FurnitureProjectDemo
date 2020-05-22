@@ -319,6 +319,9 @@ li.toC2:hover{
     background-color:  rgb(236, 236, 236);;
     /* box-shadow: 0px 0px 2px ; */
 }
+.form-control{
+    font-size: 1.5rem;
+}
 .forDesk{
     height:60px;
 }
@@ -328,7 +331,7 @@ li.toC2:hover{
 }
 input[type=text], select{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 #submitSearch:hover{
     background-color: rgb(160, 158, 158);
@@ -366,8 +369,13 @@ input[type=text], select{
 }
 #formmessage{
     width: 250px;
-    color: hotpink;
+    color: black;
+    font-weight: 550;
     border-radius: 20px;
+}
+#formmessage::placeholder{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
 }
 .fontAwesome{ 
     font-family: 'Helvetica', FontAwesome, sans-serif;

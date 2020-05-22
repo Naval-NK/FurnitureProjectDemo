@@ -414,30 +414,87 @@
         <div class="container-fluid para3">
             <div class="row">    
                 <div class="col-sm-6 text-white ">
-                    <!-- <div class="contText" >
+                    <div class="contText" >
                         <p class="contactText">CONTACT US</p>
                         <p class="contactLabel">We are always here to help you out whatever way we can !</p>
-                    </div>   -->
-<!-- FORM HERE -->
-                    <form name="contact" method="POST" action="/#contact" data-netlify="true">
-                        <p>
-                            <label>Your Name: <input type="text" name="name"/></label>
-                        </p>
-                        <p>
-                            <label>Your Email: <input type="email" name="email"/></label>
-                        </p>
-                        <p>
-                            <label>Message: <textarea name="message"></textarea></label>
-                        </p>
-                        <p>
-                            <button type="submit">Send</button>
-                        </p>
+                    </div>  
+
+                    <!-- CONTACT FORM -->
+                    <form   
+                            (ngSubmit)="submitForm()"
+                            name="contact" netlify
+                            action="/#contact"
+                            #contactForm="ngForm"
+                            method="POST" 
+                            data-netlify="true" 
+                            id="contactForm"  
+                            name="clientContactForm"
+                            novalidate
+                            >
+
+                        <!-- NAME AND EMAIL ID -->
+                        <div class="form-group toC2 mt-3">
+                        <!-- NAME INPUT BOX -->
+                            <!-- type text is preventing icon to display -->
+                            <input 
+                                #nameInput
+                                type="text"
+                                name="formname" 
+                                class="form-control mt-3 fontAwesome fa-2x" 
+                                id="formname" placeholder="&#xf007; Name"
+                                required>
+
+                            <div class="help is-error" *ngIf="nameInput.invalid && nameInput.touched">
+                                <span class="toC2">Your Name Is Required</span>
+                            </div>
+                        <!-- EMAIL INPUT BOX -->
+                            <input 
+                                #emailInput
+                                type="email"
+                                name="formemail" 
+                                class="form-control mt-3 fontAwesome fa-2x" 
+                                id="formemail" placeholder="&#xf0e0; Email" 
+                                required email
+                            >
+                            <div class="help is-error" *ngIf="emailInput.invalid && emailInput.touched">
+                                <span class="toC2">Your valid email is required</span>
+                            </div>
+                        </div>
+
+                        <!-- MESSAGE INPUT BOX -->
+                        <div class="form-group toC2">
+                            <label for="formmessage" class="contactLabel">Type Message Here</label>
+                            <textarea 
+                                #textInput
+                                class="form-control" id="formmessage" 
+                                rows="2"
+                                name="formmessage"
+                                required
+                                placeholder="Type Message Here.."
+                            ></textarea>
+                            <div class="help is-error" *ngIf="textInput.invalid && textInput.touched">
+                                <span class="toC2">Please write us</span>
+                            </div>
+                        </div>
+
+                        <!-- CAPTCHA BOX
+                        <div class="field mb-2">
+                            <div data-netlify-recaptcha="true"></div>
+                        </div> -->
+
+                        <!-- SUBMIT BUTTON -->
+                        <button 
+                            id="submitForm"
+                            class="toC4 btn btn-primary" 
+                            type="submit"
+                            [disabled]="contactForm.invalid">
+                                Send!
+                        </button>
                     </form>
-                
-<!-- FORM END HERE -->
-                    <!-- <p class="contactNum">CALL US  +91-9123456789</p> -->
+
+                    <p class="contactNum">CALL US  +91-9123456789</p>
                     <!-- <p class="contactEmail" >get_information@email.com</p> -->
-                    <!-- <p class="contIcon">
+                    <p class="contIcon">
                         <a href="javascript:void(0);" target="_blank">
                             <i class="fa fa-facebook-square fa-3x"></i>
                         </a>
@@ -447,7 +504,7 @@
                         <a role="button" (click)="showApi() ; scrollSmooth(map)">
                             <i class="fa fa-location-arrow fa-3x"></i>
                         </a>
-                    </p> -->
+                    </p>
                 </div>     
 
                 <!-- MAP API -->
@@ -500,8 +557,26 @@
     </div>
 </div> -->
 
+    <!-- ABOUT
+    <section #about>
+        <div class="container-fluid bg-success para toC2"  >
+            <div class=" text-white" style= "font-size: 4rem;color: black;">ABOUT....!</div>
+        </div>
+    </section> -->
 
-<!------------------------------------------ OLD FORM FOR EXPRESS JS ---------------------------------->
+<!-- LOGO -->
+<!-- <div class="col-2 text-white">
+    <div class="row toC1" >
+        <img
+        class="rounded mt-1"
+        height="45"
+        width="90"
+        src="../assets/logo3.png">
+    </div>
+</div> -->
+
+
+<!-- OLD FORM FOR EXPRESS JS -->
      <!-- CONTACT FORM -->
      <!-- <form   action="POST" 
      data-netlify="true" 
@@ -568,78 +643,4 @@
      [disabled]="contactForm.invalid">
          Send!
  </button>
-</form> -->
-
-
-
-<!---------------------------------- OLD BUT LATEST FORM ---------------------------------------->
-<!-- CONTACT FORM -->
-<!-- <form   name="contact" netlify
-action="/#contact"
-#contactForm="ngForm"
-method="POST" 
-data-netlify="true" 
-id="contactForm"  
-name="clientContactForm"
-novalidate
-> -->
-
-<!-- NAME AND EMAIL ID -->
-<!-- <div class="form-group toC2 mt-3"> -->
-<!-- NAME INPUT BOX -->
-<!-- type text is preventing icon to display -->
-<!-- <input 
-    #nameInput
-    type="text"
-    name="formname" 
-    class="form-control mt-3 fontAwesome fa-2x" 
-    id="formname" placeholder="&#xf007; Name"
-    required>
-
-<div class="help is-error" *ngIf="nameInput.invalid && nameInput.touched">
-    <span class="toC2">Your Name Is Required</span> -->
-<!-- </div> -->
-<!-- EMAIL INPUT BOX -->
-<!-- <input 
-    #emailInput
-    type="email"
-    name="formemail" 
-    class="form-control mt-3 fontAwesome fa-2x" 
-    id="formemail" placeholder="&#xf0e0; Email" 
-    required email
->
-<div class="help is-error" *ngIf="emailInput.invalid && emailInput.touched">
-    <span class="toC2">Your valid email is required</span>
-</div>
-</div> -->
-
-<!-- MESSAGE INPUT BOX -->
-<!-- <div class="form-group toC2">
-<label for="formmessage" class="contactLabel">Type Message Here</label>
-<textarea 
-    #textInput
-    class="form-control" id="formmessage" 
-    rows="2"
-    name="formmessage"
-    required
->
-</textarea>
-<div class="help is-error" *ngIf="textInput.invalid && textInput.touched">
-    <span class="toC2">Please write us</span>
-</div>
-</div> -->
-
-<!-- CAPTCHA BOX
-<div class="field mb-2">
-<div data-netlify-recaptcha="true"></div>
-</div> -->
-
-<!-- SUBMIT BUTTON -->
-<!-- <button 
-id="submitForm"
-class="toC4 btn btn-primary" 
-type="submit"
-[disabled]="contactForm.invalid">
-    Send!
-</button>
 </form> -->

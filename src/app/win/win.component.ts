@@ -25,30 +25,6 @@ export class WinComponent implements OnInit {
   ngOnInit(): void {
     this.displaySlides();    
 
-    
-    this.testForm = document.querySelector("#contact form"); 
-    this.testForm.addEventListener('submit', e => {
-        e.preventDefault();
-
-        this.formData = new FormData(this.testForm);
-        fetch(this.testForm.getAttribute('action'), {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
-            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-          },
-          body: new URLSearchParams(this.formData).toString()
-        })
-        .then(res => {
-          if (res) {
-            // M.toast({
-            //   html: 'Thank you for your submission!',
-            //   classes: 'pulse'
-            // });
-            alert("ASDASD");
-          }
-        });
-      });
   }
 
 
@@ -158,11 +134,10 @@ export class WinComponent implements OnInit {
   }
 
   subscribeData(){
-    // this._clientDataService.sendEmail(this.client).
-    // subscribe(
-    //   data => console.log("GOT DATA",data),
-    // )
-    // (ngSubmit)="submitForm()"
+    this._clientDataService.sendEmail(this.client).
+    subscribe(
+      data => console.log("GOT DATA",data),
+    )
   }
 
 
@@ -173,6 +148,32 @@ export class WinComponent implements OnInit {
 }
 
 
+
+
+/* VANILLA JS FORM SUBMISSION USING FETCH API
+this.testForm = document.querySelector("#contact form"); 
+this.testForm.addEventListener('submit', e => {
+    e.preventDefault();
+
+    this.formData = new FormData(this.testForm);
+    fetch(this.testForm.getAttribute('action'), {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      body: new URLSearchParams(this.formData).toString()
+    })
+    .then(res => {
+      if (res) {
+        // M.toast({
+        //   html: 'Thank you for your submission!',
+        //   classes: 'pulse'
+        // });
+        alert("ASDASD");
+      }
+    });
+  });*/
 
 
 // JQUERY FOR FORMS
