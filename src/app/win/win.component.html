@@ -428,7 +428,8 @@
                                 name="name" 
                                 class="form-control mt-3 fontAwesome fa-2x" 
                                 id="formname" placeholder=" &#xf007;  Name">
-
+                            
+                            <small *ngIf="contactForm.get('name').hasError('required')">Minimum 3 Characters & Number not allowed</small>                                
                             <!-- <div class="help is-error" *ngIf="nameInput.invalid && nameInput.touched">
                                 <span class="toC2">Your Name Is Required</span>
                             </div> -->
@@ -441,7 +442,9 @@
                                 type="email"
                                 required email
                                 >
-<!-- 
+                            <small *ngIf="contactForm.get('email').hasError('required')">Requires Full Email</small>                                
+                            
+                            <!-- 
                             <div class="help is-error" *ngIf="emailInput.invalid && emailInput.touched">
                                 <span class="toC2">Your valid email is required</span>
                             </div> -->
@@ -455,9 +458,9 @@
                                 class="form-control" id="formmessage" 
                                 rows="2"
                                 name="message"
-                                required
-                            >
+                                required>
                             </textarea>
+                            <small *ngIf="contactForm.get('message').hasError('required')">Min 10 & Max 256 Characters</small>                                
                             <!-- <div class="help is-error" *ngIf="textInput.invalid && textInput.touched">
                                 <span class="toC2">Please write us</span>
                             </div> -->

@@ -1,8 +1,8 @@
 import { Client } from '../Client';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormControl } from '@angular/forms';
+import { FormGroup,FormControl,FormBuilder } from '@angular/forms';
 import { HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http';
-
+import { Validators } from '@angular/forms'
 declare var $:any;
 
 @Component({
@@ -12,9 +12,15 @@ declare var $:any;
 })
 export class WinComponent implements OnInit {
   public _stop;
-  constructor(
-    private http: HttpClient
-  ) {}
+  constructor(private http: HttpClient , formBuilder: FormBuilder) {
+
+    // FORM VALIDATION
+    this.contactForm = formBuilder.group({
+      name: new FormControl('',Validators.compose([Validators.required, Validators.minLength(3),Validators.pattern('[a-z,A-Z ]*')])),
+      email: new FormControl('',Validators.compose([Validators.required,Validators.email,Validators.minLength(9)])),
+      message: new FormControl('',Validators.compose([Validators.required,Validators.maxLength(256),Validators.minLength(10)]))
+    });
+  }
   
   public imgs;
   public dots;
@@ -25,10 +31,15 @@ export class WinComponent implements OnInit {
   public dotId;
   public moreBtn;
   public testForm;
-  public formData
+  public formData;
+  public _relo;
+
   ngOnInit(): void {
     this.displaySlides();    
   }
+
+
+  // -------------------------------------------------------------------------------------
 
   contactForm = new FormGroup({
     name: new FormControl(''),
@@ -53,8 +64,10 @@ export class WinComponent implements OnInit {
           //backend error. If status is 200, then the message successfully sent
           if (err.status === 200) {
             alert("Your message has been sent!");
+            this.pageReload();
           } else {
             alert("Something went wrong when sending your message.");
+            this.pageReload();
             console.log('Error status:');
             console.log(err.status);
             console.log('Error body:');
@@ -65,15 +78,14 @@ export class WinComponent implements OnInit {
     );
   };
 
-
-
-
-
-
-
-
+  pageReload(){
+    setTimeout(()=>
+      window.location.reload(),1000
+    )
+  }
 
   // -------------------------------------------------------------------------------------
+
   // SLIDE MECHANISM
   displaySlides(){
     this.imgs = document.querySelectorAll(".imgs");
@@ -167,10 +179,10 @@ export class WinComponent implements OnInit {
 
   }
 
-  public clientName:string;
-  public clientEmail:string;
-  public clientMessage:string;
-  public client:Client
+  public name:string;
+  public email:string;
+  public message:string;
+  // public client:Client
 
   // client = new Client("ABC","ABC@123","HI THERE");
   

@@ -262,7 +262,16 @@ li.toC2:hover{
 }
 
 /*---------------------------------- CONTACT PAGE ---------------------------------- */
-
+small {
+    font-size: 1.1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 3%;
+}
+small:hover{
+    color: rgb(251, 204, 72);
+    transform: scale(1.05);
+    transition: ease-in .5s;
+}
 .contactNum{
     font-variant-numeric: proportional-nums;
     font-weight: 300;
@@ -299,7 +308,7 @@ li.toC2:hover{
 }
 .contText{
     text-align: center;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 /* .mobileView{
     visibility: hidden;
