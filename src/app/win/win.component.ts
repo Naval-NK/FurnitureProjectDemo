@@ -20,7 +20,7 @@ export class WinComponent implements OnInit {
   public dots;
   public static imgNum :number = 0;
   public ele ;
-
+  public body;
   public moreId;
   public dotId;
   public moreBtn;
@@ -33,16 +33,16 @@ export class WinComponent implements OnInit {
   contactForm = new FormGroup({
     name: new FormControl(''),
     email: new FormControl(''),
-    message: new FormControl(''),
+    message: new FormControl('')
   });
 
   onSubmit() {
-    const body = new HttpParams()
+    this.body = new HttpParams()
     .set('form-name', 'contact')
     .append('name', this.contactForm.value.name)
     .append('email', this.contactForm.value.email)
     .append('message', this.contactForm.value.message)
-    this.http.post('/', body.toString(), {headers: { 'Content-Type': 'application/x-www-form-urlencoded' }}).subscribe(
+    this.http.post('/', this.body.toString(), {headers: { 'Content-Type': 'application/x-www-form-urlencoded' }}).subscribe(
       res => {},
       err => {
         if (err instanceof ErrorEvent) {

@@ -20,8 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
-    
+    HttpClientModule
   ],
   
   providers: [SubmitFormService],
