@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { WinComponent } from './win/win.component';
 import { AboutComponent } from './about/about.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,10 +16,12 @@ import { HttpClientModule } from '@angular/common/http';
     AboutComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   
   providers: [SubmitFormService],
