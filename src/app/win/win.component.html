@@ -409,6 +409,7 @@
                     
                     <!-- CONTACT FORM -->
                     <form 
+                        data-netlify-recaptcha="true"
                         (ngSubmit)="onSubmit()"
                         [formGroup]="contactForm"
                         name="contact"
@@ -465,7 +466,7 @@
                                 <span class="toC2">Please write us</span>
                             </div> -->
                         </div>
-
+                        <div data-netlify-recaptcha="true"></div>
                         <!-- SUBMIT BUTTON -->
                         <button 
                             class="toC4 btn btn-primary" 
