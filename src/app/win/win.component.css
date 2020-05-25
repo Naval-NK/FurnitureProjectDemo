@@ -1029,7 +1029,7 @@ img.childBedDesk:hover {
         text-transform: uppercase;
     }
     .fea{
-        margin-top: 16%;
+        margin-top: 12%;
     }
     .para3{
         margin-top: 5%;
@@ -1045,6 +1045,12 @@ img.childBedDesk:hover {
     }
     #logoImg:hover{
         box-shadow: 4px 4px 18px white;
+    }
+    .contactNum{
+        margin-left: 0px;
+    }
+    .contIcon{
+        margin-left: 0%;
     }
 }
 
