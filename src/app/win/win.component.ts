@@ -21,7 +21,7 @@ export class WinComponent implements OnInit {
       message: new FormControl('',Validators.compose([Validators.required,Validators.maxLength(256),Validators.minLength(10)]))
     });
   }
-  
+  public testCheck;
   public imgs;
   public dots;
   public static imgNum :number = 0;
