@@ -87,23 +87,27 @@ export class WinComponent implements OnInit {
 
   // SLIDE MECHANISM
   displaySlides(){
-    this.imgs = document.querySelectorAll(".imgs");
-    this.dots = document.querySelectorAll(".dot");
-    for( let i= 0 ; i<this.imgs.length ; i++ ){
-      this.imgs[i].style.display="none";
+    try {
+        this.imgs = document.querySelectorAll(".imgs");
+      this.dots = document.querySelectorAll(".dot");
+      for( let i= 0 ; i<this.imgs.length ; i++ ){
+        this.imgs[i].style.display="none";
+      }
+      if(WinComponent.imgNum >= this.imgs.length){
+        WinComponent.imgNum = 0;
+      }
+      this.imgs[WinComponent.imgNum].style.display="block";
+      WinComponent.imgNum++;
+      for(let i =0;i<this.dots.length;i++){
+        this.dots[i].className = this.dots[i].className.replace(" active","");
+      }
+      this.dots[WinComponent.imgNum-1].className += " active";
+      this._stop = setTimeout(()=>
+        this.displaySlides(),6000
+      )
+    } catch (error) {
+       
     }
-    if(WinComponent.imgNum >= this.imgs.length){
-      WinComponent.imgNum = 0;
-    }
-    this.imgs[WinComponent.imgNum].style.display="block";
-    WinComponent.imgNum++;
-    for(let i =0;i<this.dots.length;i++){
-      this.dots[i].className = this.dots[i].className.replace(" active","");
-    }
-    this.dots[WinComponent.imgNum-1].className += " active";
-    this._stop = setTimeout(()=>
-      this.displaySlides(),6000
-    )
   }
 
   // SLIDE SHOW HOLD FOR SOME TIME WHEN DOT CLICKED
