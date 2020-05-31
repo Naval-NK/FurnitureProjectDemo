@@ -11,6 +11,10 @@
   display: inline-block;
   color: #fff;
 }
+.btnfocus:focus{
+    outline: none !important;
+    outline-offset:0 !important;
+}
 .text{
     font-size: 2.2rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

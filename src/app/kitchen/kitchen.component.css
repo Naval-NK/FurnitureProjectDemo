@@ -11,6 +11,10 @@
   display: inline-block;
   color: #fff;
 }
+.btnfocus:focus{
+    outline: none !important;
+    outline-offset:0 !important;
+}
 img:hover{
     transform: scale(1.0012);
     transition: ease-out 0.2s;

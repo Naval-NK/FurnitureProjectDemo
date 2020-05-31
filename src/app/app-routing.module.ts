@@ -1,3 +1,4 @@
+import { FurnituresComponent } from './furnitures/furnitures.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { WinComponent } from './win/win.component';
 import { KitchenComponent } from './kitchen/kitchen.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path:'home' , component :WinComponent },
   { path:'living', component  : LivingRoomComponent},
   { path:'kitchen',  component :  KitchenComponent},
+  { path:'furnitures',  component :  FurnituresComponent},
   { path: "**" ,  component:PageNotFoundComponent }
 ];
 
@@ -20,4 +22,8 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [LivingRoomComponent,KitchenComponent,WinComponent,PageNotFoundComponent]
+export const routingComponents = [FurnituresComponent,
+                                  LivingRoomComponent,
+                                  KitchenComponent,
+                                  WinComponent,
+                                  PageNotFoundComponent]
