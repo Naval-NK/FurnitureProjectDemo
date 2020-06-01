@@ -277,7 +277,8 @@ small:hover{
     font-weight: 300;
     font-size: 1.5rem;
     text-align: center;
-    margin-left: 35px;
+    margin-left: 0%;
+    /* margin-left: 0%; CHANGED*/
     margin-top: 20px;
     color: white;
     letter-spacing: 2px;
@@ -301,7 +302,8 @@ small:hover{
 .contIcon { 
     text-align: center;
     margin-top: 15px;
-    margin-left: 35px;
+    /* margin-left: 35px; */
+    margin-left: 0%;
 }
 .fa-whatsapp{
     margin-left: 15px;
@@ -395,7 +397,7 @@ input[type=text], select{
 }
 .btn{
     width: 250px;
-    margin-left: 31%;
+    margin-left: 30%;
     border-radius: 20px;
 }
 
