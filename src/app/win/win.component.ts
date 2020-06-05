@@ -1,4 +1,3 @@
-import { Client } from '../Client';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl,FormBuilder } from '@angular/forms';
 import { HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http';
@@ -10,6 +9,7 @@ declare var $:any;
   templateUrl: './win.component.html',
   styleUrls: ['./win.component.css']
 })
+
 export class WinComponent implements OnInit {
   public _stop;
   constructor(private http: HttpClient , formBuilder: FormBuilder) {
@@ -82,7 +82,6 @@ export class WinComponent implements OnInit {
       window.location.reload(),1000
     )
   }
-
   // -------------------------------------------------------------------------------------
 
   // SLIDE MECHANISM
