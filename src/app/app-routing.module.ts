@@ -10,7 +10,6 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   // FULL TELL IF FULL URL IS EMPTY GO TO HOMECOMPONENT
   { path:'',redirectTo : '/home',pathMatch : 'full' },
-  { path:'https://tablewoodfs.netlify.app',redirectTo : 'https://tablewoodfs.netlify.app/home',pathMatch : 'full' },
   { path:'home' , component :WinComponent },
   { path:'living', component  : LivingRoomComponent},
   { path:'kitchen',  component :  KitchenComponent},
