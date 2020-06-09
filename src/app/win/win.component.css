@@ -685,7 +685,7 @@ img.childBedDesk:hover {
         height: 0px;
     }
     .btn{
-        margin-left: 52px;
+        /* margin-left: 52px; */
         width: 250px;   
         border-radius: 20px;
     }
@@ -866,8 +866,8 @@ img.childBedDesk:hover {
         margin-left: -10%;
     }
     .btn{
-        width: 50%;
-        margin-left: 25%;
+        width: 100%;
+        /* margin-left: 25%; */
         border-radius: 20px;
     }
     .contact-form{
