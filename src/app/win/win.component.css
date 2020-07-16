@@ -647,7 +647,9 @@ img.childBedDesk:hover {
     transform:scale(1.08);
     transition: ease-in .5s;
 }
-
+.des_resp{
+    margin-left: 7%;
+}
 
 
 /*------------------------TAB RESPONSIVE------------------------*/
@@ -760,6 +762,10 @@ img.childBedDesk:hover {
 
 /*------------------------Mobile RESPONSIVE------------------------*/
 @media screen and (max-width: 500px) {
+    .des_resp{
+        margin-left: 0;
+    }
+
     .navBar li:not(:first-child) {display: none;}
     .logoMiddle 
     .navBar{

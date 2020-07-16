@@ -39,26 +39,11 @@ span.text{
     transition: ease-in 0.5s;
 }
 @media screen and (min-width:768px){
-    .span_marg{
-        margin-left: 60px;
-    }
-    .span_marg_trolly{
-        margin-left: 9%;
-    }
     .text{
         font-size: 2.2rem;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-weight: 500;
         user-select: none;
-    }
-    #culi1_tables{
-        margin-left: 12%;
-    }
-    #culi2_tables{
-        margin-left: 20%;
-    }
-    #trolly{
-        margin-left: 14%;
     }
 }
 
